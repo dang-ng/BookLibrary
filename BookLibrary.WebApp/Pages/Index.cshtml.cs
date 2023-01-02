@@ -9,7 +9,7 @@ public class IndexModel : PageModel
 {
     private readonly IRepository _repository;
 
-    public IndexModel(IRepository repository) => _repository = repository;
+    public IndexModel(IRepository repository) => this._repository = repository;
 
     public HashSet<Book> Books => _repository.Books;
     public int Count => _repository.Books.Count;

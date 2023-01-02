@@ -5,6 +5,54 @@
     @switch (Model.Job)
     {
         case BookModel.Action.Detail:
-            
+            Template(readOnly: true, errorMessage: "Không tìm thấy cuốn sách bạn yêu cầu");
+            <a class="btn btn-info w-100 mb-2" href="/">Return</a>
+            break;
+        case BookModel.Action.Delete:
+            Template(readOnly: true, errorMessage:"Không tìn thấy cuốn sách bạn yêu cầu");
+            if (Model.Book != null)
+            {
+                <p class="text-danger text-center">Bạn thực sự muốn xóa cuốn sách này?</p>
+                <a class="btn btn-danger w-100 mb-2" href="/book/@Model.Book.Id?handler=confirm">Delete</a>
+            }
+            <a class="btn btn-info w-100 mb-2" href="/">Return</a>
+            break;
+        case BookModel.Action.Create:
+            await Form();
+            break;
+        case BookModel.Action.Update:
+            await Form(handler: "update");
+            break;
+
     }
 </div>
+@{
+    void Template(bool readOnly = true, string errorMessage = "")
+    {
+        if (Model.Book == null)
+        {
+            <p class="h5 text-center text-danger mb-4">@errorMessage</p>
+            return;
+        }
+        <input name="id" type="hidden" value="@Model.Book.Id"/>
+        <p class="h4 text-center mb-4">@Model.Book.Title</p>
+        <label for="title">Tiêu Đề</label>
+        <input name="title" type="text" class="form-control mb-2" id="title" value="@Model.Book.Title" @(readOnly?"readOnly":"")/>
+        <label for="authors">Tác Giả</label>
+        <input name="authors" type="text" class="form-control mb-2" id="authors" value="@Model.Book.Authors" @(readOnly?"readOnly":"")/>
+        <label for="publisher">Nhà Xuất Bản</label>
+        <input name="publisher" type="text" class="form-control mb-2" id="publisher" value="@Model.Book.Publisher" @(readOnly?"readOnly":"")/>
+        <label for="year">Năm xuất Bản</label>
+        <input name="year" type="text" class="form-control mb-2" id="year" value="@Model.Book.Year" @(readOnly?"readOnly":"")/>
+    }
+
+    async Task Form(string handler = "create")
+    {
+        <form method="post" href="?handler=@handler">
+            @{Template(false);}
+            <button type="submit" class="btn btn-primary w-100 mb-2">Save</button>
+            <button type="reset" class="btn btn-secondary w-100 mb-2">Reset</button>
+        </form>
+        <a class="btn btn-info w-100 mb-2" href="/">Return</a>
+    }
+}

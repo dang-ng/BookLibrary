@@ -7,6 +7,7 @@
 <div class="text-center">
     <p class="h3 p-3">Welcome to My Book Library built with .NET Razor Pages</p>
     <div>
+        <a href="/book?handler=create" class="btn btn-primary btn-sm m-2">Add new book</a>
         <table class="table table-bordered table-sm">
             <thead class="thead-light">
             <tr>
@@ -27,6 +28,8 @@
                     <td>@b.Year</td>
                     <td>
                         <a href="/book/@b.Id" class="btn btn-info btn-sm">Details</a>
+                        <a href="/book/@b.Id?handler=delete" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="/book/@b.Id?handler=update" class="btn btn-secondary btn-sm">Update</a>
                     </td>
                 </tr>
             }

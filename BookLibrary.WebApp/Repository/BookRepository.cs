@@ -15,4 +15,25 @@ public class BookRepository : IRepository
     };
 
     public Book? Get(int id) => Books.SingleOrDefault(b => b.Id == id);
+
+    public bool Delete(int id)
+    {
+        var book = Get(id);
+        return book != null && Books.Remove(book);
+    }
+
+    public Book? Create()
+    {
+        var max = Books.Max(b => b.Id);
+        var book = new Book() { Id = ++max };
+        return book;
+    }
+
+    public bool Add(Book book) => Books.Add(book);
+
+    public bool Update(Book book)
+    {
+        var b = Get(book.Id);
+        return b != null && (Books.Remove(b) && Books.Add(book));
+    }
 }

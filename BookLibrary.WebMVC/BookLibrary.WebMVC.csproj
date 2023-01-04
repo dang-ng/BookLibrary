@@ -8,6 +8,11 @@
 
     <ItemGroup>
       <Folder Include="Data" />
+      <Folder Include="Pages" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Book\Index.cshtml" />
     </ItemGroup>
 
 </Project>

@@ -23,6 +23,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute("book","{action=Index}/{id?}", new{controller = "Book"});
+app.MapControllerRoute("book","{action=index}/{id?}", new{controller = "Book"});
 
 app.Run();

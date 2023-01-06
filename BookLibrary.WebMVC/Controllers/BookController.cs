@@ -11,9 +11,15 @@ public class BookController : Controller
     {
         _service = service;
     }
-    // GET
     public IActionResult Index()
     {
         return View(_service.Get());
+    }
+
+    public IActionResult Details(int id)
+    {
+        var b = _service.Get(id);
+        if (b == null) return NotFound();
+        else return View(b);
     }
 }

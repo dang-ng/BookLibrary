@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLibrary.WebApp", "BookL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLibrary.WebMVC", "BookLibrary.WebMVC\BookLibrary.WebMVC.csproj", "{3E5E1B57-D6B0-45FF-8D4A-07A76EA0BB1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLibrary.ConsoleApp", "BookLibrary.ConsoleApp\BookLibrary.ConsoleApp.csproj", "{AEAA21D4-1EEC-4856-9A07-CCFAAFBBBC50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{3E5E1B57-D6B0-45FF-8D4A-07A76EA0BB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E5E1B57-D6B0-45FF-8D4A-07A76EA0BB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E5E1B57-D6B0-45FF-8D4A-07A76EA0BB1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEAA21D4-1EEC-4856-9A07-CCFAAFBBBC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEAA21D4-1EEC-4856-9A07-CCFAAFBBBC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEAA21D4-1EEC-4856-9A07-CCFAAFBBBC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEAA21D4-1EEC-4856-9A07-CCFAAFBBBC50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
